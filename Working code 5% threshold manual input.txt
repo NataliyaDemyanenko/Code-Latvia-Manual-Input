@@ -1,4 +1,4 @@
-﻿import lxml.html as LH                                       # Importing libraries and modules, defining functions
+import lxml.html as LH                                       # Importing libraries and modules, defining functions
 import requests
 import re
 from string import maketrans
