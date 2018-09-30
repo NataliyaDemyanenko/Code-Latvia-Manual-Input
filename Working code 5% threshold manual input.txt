@@ -83,5 +83,5 @@ for k in chi.keys():
     power={}
     for i in tuple(k):
         power[i] = chi[k]*sh[i]
-        show(k, power, S)
+    show(k, power, S)
         
