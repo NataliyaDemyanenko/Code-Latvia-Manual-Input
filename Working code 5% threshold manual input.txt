@@ -34,7 +34,6 @@ friends['E']='A', 'B', 'C', 'D', 'E', 'F', 'G'
 friends['F']='A', 'B', 'C', 'D', 'E', 'F', 'G'
 friends['G']='A', 'B', 'C', 'D', 'E', 'F', 'G'
 
-
 worth = {}                                           # Assign worth to coalitions
 for i in tuple(coalitions):
     sumsp=0
