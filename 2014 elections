@@ -27,10 +27,10 @@ for p in parties:
                                                          # Introduce campaign commitments
 friends={}
 friends['A']='A', 'E', 'F'
-friends['B']='B', 'C', 'D', 'E', 'F'
-friends['C']='B', 'C', 'D', 'E', 'F'
-friends['D']='B', 'C', 'D', 'E', 'F'
-friends['E']='A', 'B', 'C', 'D', 'E', 'F'
+friends['B']='B', 'C', 'D', 'F'
+friends['C']='B', 'C', 'D', 'F'
+friends['D']='B', 'C', 'D', 'F'
+friends['E']='A', 'E', 'F'
 friends['F']='A', 'B', 'C', 'D', 'E', 'F'
 
 worth = {}                                           # Assign worth to coalitions
