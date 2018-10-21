@@ -1,12 +1,13 @@
 
 
+
 import lxml.html as LH                                       # Importing libraries and modules, defining functions
 import requests
 import re
 from string import maketrans
 def text(elt):
     return elt.text_content().replace(u'\xa0', u' ')                                                      
-polls=['27.75','20.73','16.75','13.24','15.79','5.75']         # Manual input of data
+polls=['25.40','18.98','15.33','12.12','14.45','5.26']         # Manual input of data
 for i in range(len(polls)): 
     polls[i] = float(polls[i]) 
 P=0
