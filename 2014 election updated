@@ -1,19 +1,20 @@
 
+
 import lxml.html as LH                                       # Importing libraries and modules, defining functions
 import requests
 import re
 from string import maketrans
 def text(elt):
     return elt.text_content().replace(u'\xa0', u' ')                                                      
-polls=['19.80','13.59','11.01','14.25','12.04','9.91','6.69']         # Manual input of data
+polls=['27.75','20.73','16.75','13.24','15.79','5.75']         # Manual input of data
 for i in range(len(polls)): 
     polls[i] = float(polls[i]) 
 P=0
 for i in range(len(polls)-1):
     P += polls[i]
                                                          # Computing seats, Shapley values and all winning coalitions
-parties=('A','B','C', 'D', 'E', 'F', 'G')                      # Initialize parties and coalitions (labelled by letters)
-labels = ('Saskana', 'JKP','NA','KPV LV','Attistibai/Par','ZZS', 'JV')
+parties=('A','B','C', 'D', 'E', 'F')                      # Initialize parties and coalitions (labelled by letters)
+labels = ('Saskana', 'JV','ZZS','NA','NSL','LRA')
 label = dict(zip(parties,labels))   
 coalitions = powerset(parties)
 s ={}                                                     # Initialize proportions of seats (precise and rounded)    
@@ -26,13 +27,12 @@ for p in parties:
     sround[p]= round(float(s[p]*100),0)
     i+=1
 
-sround['A']=23
-sround['B']=16
-sround['C']=13
-sround['D']=16
-sround['E']=13
-sround['F']=11
-sround['G']=8
+sround['A']=28
+sround['B']=20
+sround['C']=17
+sround['D']=13
+sround['E']=16
+sround['F']=6
 
 for p in parties:
     s[p] = sround[p]/100
@@ -41,13 +41,13 @@ for p in parties:
 
 # Introduce campaign commitments
 friends={}
-friends['A']='A', 'D', 'E', 'F'
-friends['B']='B', 'C', 'D', 'E', 'F', 'G'
-friends['C']='B', 'C', 'D', 'E', 'F', 'G'
-friends['D']='A', 'B', 'C', 'D', 'E', 'F', 'G'
-friends['E']='A', 'B', 'C', 'D', 'E', 'F', 'G'
-friends['F']='A', 'B', 'C', 'D', 'E', 'F', 'G'
-friends['G']='B', 'C', 'D', 'E', 'F', 'G'
+friends['A']='A', 'E', 'F'
+friends['B']='B', 'C', 'D', 'F'
+friends['C']='B', 'C', 'D', 'F'
+friends['D']='B', 'C', 'D', 'F'
+friends['E']='A', 'E', 'F'
+friends['F']='A', 'B', 'C', 'D', 'E', 'F'
+
 
 worth = {}                                           # Assign worth to coalitions
 for i in tuple(coalitions):
